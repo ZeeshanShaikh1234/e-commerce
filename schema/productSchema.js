@@ -1,0 +1,66 @@
+let {sequelize,DataTypes,Model,Op}=require("../init/DBconfig");
+
+class Product extends Model {}
+
+Product.init({
+    id:{
+        type:DataTypes.INTEGER,
+        autoIncrement:true,
+        primaryKey:true
+    },
+    name:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    quantity:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    discount:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    discounted_price:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    price:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    discription:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    pId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    images:{
+        type:DataTypes.STRING,
+        allowNull:true
+    },
+    createdBy:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    updatedBy:{
+        type:DataTypes.INTEGER,
+        allowNull:true
+    },
+    stokAlert:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    isActive:{
+        type:DataTypes.BOOLEAN,
+        allowNull:false
+    }
+},{
+    modelName:"Product",
+    tableName:"product",
+    sequelize
+}
+)
+
+module.exports={Product,Op}
